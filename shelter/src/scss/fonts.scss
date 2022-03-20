@@ -1,28 +1,28 @@
 @font-face{
-	font-family: Inter;
+	font-family: Arial;
 	font-display: swap;
-	src: url("../fonts/Inter-Bold.woff2") format("woff2"), url("../fonts/Inter-Bold.woff") format("woff");
-	font-weight: 700;
-	font-style: normal;
-}
-@font-face{
-	font-family: Inter;
-	font-display: swap;
-	src: url("../fonts/Inter-Regular.woff2") format("woff2"), url("../fonts/Inter-Regular.woff") format("woff");
+	src: url("../fonts/Arial-Italic.woff2") format("woff2"), url("../fonts/Arial-Italic.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
 @font-face{
-	font-family: Merriweather;
+	font-family: Arial;
 	font-display: swap;
-	src: url("../fonts/Merriweather-Bold.woff2") format("woff2"), url("../fonts/Merriweather-Bold.woff") format("woff");
+	src: url("../fonts/Arial-Regular.woff2") format("woff2"), url("../fonts/Arial-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face{
+	font-family: Georgia;
+	font-display: swap;
+	src: url("../fonts/Georgia-Bold.woff2") format("woff2"), url("../fonts/Georgia-Bold.woff") format("woff");
 	font-weight: 700;
 	font-style: normal;
 }
 @font-face{
-	font-family: Merriweather;
+	font-family: Georgia;
 	font-display: swap;
-	src: url("../fonts/Merriweather-Regular.woff2") format("woff2"), url("../fonts/Merriweather-Regular.woff") format("woff");
+	src: url("../fonts/Georgia-Regular.woff2") format("woff2"), url("../fonts/Georgia-Regular.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
