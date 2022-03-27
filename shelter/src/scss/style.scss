@@ -8,7 +8,7 @@
 	--pink: #F1CDB3;
 	--matte-black: #4C4C4C;
 	--title-black: #545454;
-	--bg-dark: linear-gradient(135deg, #5b473a, #201f20);
+	--bg-dark: linear-gradient(90deg, #5b473a, #201f20);
 }
 
 html {
@@ -16,7 +16,7 @@ html {
 }
 
 .header,
-.core,
+.not-only,
 .footer {
 	font-family: Arial;
 	font-size: 15px;
@@ -24,14 +24,19 @@ html {
 	font-weight: 400;
 	line-height: 1.5;
 	letter-spacing: 0em;
+}
+
+.footer {
 	color: var(--matte-black);
 }
 
-.header {
+.header,
+.not-only {
 	color: var(--pink);
 }
 
 .core,
+.not-only,
 .footer {
 	background: var(--bg-dark);
 }
@@ -82,6 +87,107 @@ svg {
 #transition-none * {
 	transition: none !important;
 }
+
+//header
+.header {
+	position: absolute;
+	top: 60px;
+	left: 0;
+	width: 100%;
+	height: 60px;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__logo {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		& h1 {
+			font-family: Georgia;
+			font-size: 32px;
+			line-height: 35px;
+			letter-spacing: 0.06em;
+		}
+
+		& p {
+			font-family: Arial;
+			font-size: 13px;
+			line-height: 15px;
+			letter-spacing: 0.1em;
+		}
+	}
+
+	&__nav {}
+
+	&__list {
+		height: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__item {
+		margin-left: 35px;
+	}
+
+	&__link {
+		color: var(--pink);
+	}
+}
+
+//header
+
+//not-only
+.not-only {
+
+	&__container {}
+
+	&__body {
+		padding-top: 180px;
+		display: flex;
+	}
+
+	&__column {
+		margin-top: 163px;
+		height: 322px;
+		margin-right: 42px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__title {
+		color: var(--white);
+		font-family: Georgia;
+		font-size: 44px;
+		line-height: 57px;
+		letter-spacing: 0em;
+	}
+
+	&__subtitle {
+		color: var(--gray);
+	}
+
+	&__btn {
+		color: var(--black);
+		width: 207px;
+		height: 52px;
+		border-radius: 100px;
+		background: var(--pink);
+		font-family: Georgia;
+		font-size: 17px;
+		line-height: 22px;
+		letter-spacing: 0.06em;
+	}
+
+	&__wallpaper {}
+}
+
+//not-only
 
 //footer
 
