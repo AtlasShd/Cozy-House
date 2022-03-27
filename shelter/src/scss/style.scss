@@ -5,6 +5,7 @@
 	--black: #000000;
 	--white: #ffffff;
 	--gray: #CDCDCD;
+	--dark-gray: #B2B2B2;
 	--pink: #F1CDB3;
 	--matte-black: #4C4C4C;
 	--title-black: #545454;
@@ -20,6 +21,7 @@ html {
 .about,
 .our-friends,
 .help,
+.in-addition,
 .footer {
 	font-family: Arial;
 	font-size: 15px;
@@ -380,6 +382,91 @@ svg {
 }
 
 //help
+
+//in-addition
+.in-addition {
+
+	&__container {
+		max-width: 996px;
+	}
+
+	&__body {
+		display: flex;
+		padding: 80px 0 100px;
+	}
+
+	&__wallpaper {
+		display: flex;
+		align-items: center;
+	}
+
+	&__column {
+		padding-left: 30px;
+		display: flex;
+		flex-direction: column;
+		row-gap: 20px;
+	}
+
+	&__title {
+		font-family: Georgia;
+		font-size: 35px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 45px;
+		letter-spacing: 0.06em;
+		text-align: left;
+	}
+
+	&__bank {
+		font-family: Georgia;
+		font-size: 15px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 17px;
+		letter-spacing: 0.06em;
+		text-align: left;
+	}
+
+	&__card {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		width: 349px;
+		height: 43px;
+		background: var(--pink);
+		border-radius: 9px;
+
+	}
+
+	&__icon {
+		width: 30px;
+		height: 23px;
+	}
+
+	&__number {
+		font-family: Georgia;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 23px;
+		letter-spacing: 0.06em;
+		text-align: left;
+		color: var(--title-black);
+	}
+
+	&__post-scriptum {
+		font-family: Arial;
+		font-size: 12px;
+		font-style: italic;
+		font-weight: 400;
+		line-height: 18px;
+		letter-spacing: 0px;
+		text-align: left;
+		color: var(--dark-gray);
+	}
+}
+
+//in-addition
 
 //footer
 

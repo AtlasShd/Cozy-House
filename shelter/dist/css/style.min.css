@@ -122,6 +122,7 @@ h6 {
   --black: #000000;
   --white: #ffffff;
   --gray: #CDCDCD;
+  --dark-gray: #B2B2B2;
   --pink: #F1CDB3;
   --matte-black: #4C4C4C;
   --title-black: #545454;
@@ -137,6 +138,7 @@ html {
 .about,
 .our-friends,
 .help,
+.in-addition,
 .footer {
   font-family: Arial;
   font-size: 15px;
@@ -415,6 +417,75 @@ svg {
   line-height: 23px;
   letter-spacing: 0.06em;
   text-align: center;
+}
+
+.in-addition__container {
+  max-width: 996px;
+}
+.in-addition__body {
+  display: flex;
+  padding: 80px 0 100px;
+}
+.in-addition__wallpaper {
+  display: flex;
+  align-items: center;
+}
+.in-addition__column {
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.in-addition__title {
+  font-family: Georgia;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 45px;
+  letter-spacing: 0.06em;
+  text-align: left;
+}
+.in-addition__bank {
+  font-family: Georgia;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0.06em;
+  text-align: left;
+}
+.in-addition__card {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 349px;
+  height: 43px;
+  background: var(--pink);
+  border-radius: 9px;
+}
+.in-addition__icon {
+  width: 30px;
+  height: 23px;
+}
+.in-addition__number {
+  font-family: Georgia;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  text-align: left;
+  color: var(--title-black);
+}
+.in-addition__post-scriptum {
+  font-family: Arial;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: var(--dark-gray);
 }
 
 .footer__body {
