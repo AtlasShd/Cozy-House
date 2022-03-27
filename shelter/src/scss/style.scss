@@ -18,6 +18,7 @@ html {
 .header,
 .not-only,
 .about,
+.our-friends,
 .footer {
 	font-family: Arial;
 	font-size: 15px;
@@ -87,6 +88,15 @@ svg {
 
 #transition-none * {
 	transition: none !important;
+}
+
+.button {
+	color: var(--black);
+	border-radius: 100px;
+	font-family: Georgia;
+	font-size: 17px;
+	line-height: 22px;
+	letter-spacing: 0.06em;
 }
 
 //header
@@ -174,15 +184,9 @@ svg {
 	}
 
 	&__btn {
-		color: var(--black);
 		width: 207px;
 		height: 52px;
-		border-radius: 100px;
 		background: var(--pink);
-		font-family: Georgia;
-		font-size: 17px;
-		line-height: 22px;
-		letter-spacing: 0.06em;
 	}
 
 	&__wallpaper {}
@@ -200,7 +204,7 @@ svg {
 	&__body {
 		display: flex;
 		justify-content: space-between;
-		margin: 80px 0 100px;
+		padding: 80px 0 100px;
 	}
 
 	&__wallpaper {
@@ -224,6 +228,109 @@ svg {
 }
 
 //about
+
+//our-friends
+.our-friends {
+
+	&__container {}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		padding: 80px 0 100px;
+	}
+
+	&__header {
+		margin: 0 auto;
+	}
+
+	&__title {
+		text-align: center;
+	}
+
+	&__carousel {
+		margin: 60px 0;
+		height: 435px;
+	}
+
+	&__footer {
+		margin: 0 auto;
+	}
+
+	&__btn {
+		width: 261px;
+		height: 52px;
+		background: var(--pink);
+	}
+}
+
+.carousel {
+	display: flex;
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		margin-bottom: 30px;
+	}
+
+	&__card {
+		display: grid;
+		row-gap: 30px;
+	}
+
+	&__img {}
+
+	&__name {
+		text-align: center;
+		font-family: Georgia;
+		font-size: 20px;
+		line-height: 23px;
+		letter-spacing: 0.06em;
+	}
+
+	&__btns {
+		display: flex;
+	}
+
+	&__btn {
+		width: 187px;
+		height: 52px;
+		border: 1px solid var(--pink);
+		background: var(--white);
+		margin: 0 auto;
+	}
+
+	&__arrow {
+		flex: 0 0 105px;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+
+		&_left {
+			justify-content: start;
+		}
+
+		&_right {
+			justify-content: end;
+		}
+	}
+
+	& .arrow {
+		width: 52px;
+		height: 52px;
+		border-radius: 100%;
+		border: 2px solid var(--pink);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		align-self: center;
+		font-weight: 700;
+	}
+}
+
+//our-friends
 
 //footer
 
