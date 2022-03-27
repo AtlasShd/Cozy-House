@@ -95,12 +95,20 @@ svg {
 }
 
 .button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	color: var(--black);
 	border-radius: 100px;
 	font-family: Georgia;
 	font-size: 17px;
 	line-height: 22px;
 	letter-spacing: 0.06em;
+	transition: background 0.5s ease 0s;
+
+	&:hover {
+		background: var(--light-pink);
+	}
 }
 
 //header
@@ -133,6 +141,7 @@ svg {
 			font-size: 13px;
 			line-height: 15px;
 			letter-spacing: 0.1em;
+			padding-left: 4px;
 		}
 	}
 
@@ -143,14 +152,32 @@ svg {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		transform: translate(-2px, -2px);
 	}
 
 	&__item {
 		margin-left: 35px;
+		position: relative;
 	}
 
 	&__link {
 		color: var(--pink);
+
+		&:hover {
+			color: var(--white);
+		}
+	}
+
+	&__active {
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: -3px;
+			left: 0;
+			width: 100%;
+			height: 3px;
+			background: var(--pink);
+		}
 	}
 }
 
@@ -275,12 +302,19 @@ svg {
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
-		margin-bottom: 30px;
 	}
 
 	&__card {
 		display: grid;
 		row-gap: 30px;
+		border-radius: 9px;
+		overflow: hidden;
+		transition: box-shadow 0.5s ease 0s;
+		padding-bottom: 30px;
+
+		&:hover {
+			box-shadow: 0 0 12px 1px var(--matte-black);
+		}
 	}
 
 	&__img {}
@@ -331,6 +365,12 @@ svg {
 		align-items: center;
 		align-self: center;
 		font-weight: 700;
+		transition: background 0.5s ease 0s;
+		cursor: pointer;
+
+		&:hover {
+			background: var(--light-pink);
+		}
 	}
 }
 
@@ -491,6 +531,12 @@ svg {
 		height: 234px;
 	}
 
+	&__questions {}
+
+	&__waiting {
+		transform: translateX(-9px);
+	}
+
 	&__title {
 		color: var(--white);
 	}
@@ -512,7 +558,17 @@ svg {
 		padding-right: 20px;
 	}
 
-	&__text {}
+	&__text {
+		display: inline-block;
+		font-family: Georgia;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 23px;
+		letter-spacing: 0.06em;
+		text-align: left;
+		color: var(--pink);
+	}
 
 	&__wallpaper {
 		align-self: end;
