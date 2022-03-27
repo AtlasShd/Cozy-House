@@ -7,6 +7,7 @@
 	--gray: #CDCDCD;
 	--dark-gray: #B2B2B2;
 	--pink: #F1CDB3;
+	--light-pink: #FDDCC4;
 	--matte-black: #4C4C4C;
 	--title-black: #545454;
 	--bg-dark: linear-gradient(90deg, #5b473a, #201f20);
@@ -480,48 +481,41 @@ svg {
 		width: 100%;
 		justify-content: space-between;
 		align-items: center;
-
-		& a {
-			display: flex;
-			align-items: center;
-
-			&:hover {
-				color: var(--gold);
-
-				& svg {
-					fill: var(--gold);
-				}
-			}
-		}
-
-		& svg {
-			width: 28px;
-			margin-right: 8px;
-			transition: fill 0.5s ease 0s;
-			fill: var(--white);
-		}
+		column-gap: 150px;
 	}
 
-	&__year {
+	&__column {
 		display: flex;
-		width: auto;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 234px;
 	}
 
-	&__company {}
+	&__title {
+		color: var(--white);
+	}
 
-	@media (max-width: 1024px) {
+	&__item {
+		font-family: Georgia;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 23px;
+		letter-spacing: 0.06em;
+		text-align: left;
+		color: var(--pink);
+		display: flex;
+		align-items: center;
+	}
 
-		&__year {
-			padding-top: 20px;
-		}
+	&__logo {
+		padding-right: 20px;
+	}
 
-		&__company {
-			padding-bottom: 20px;
-		}
+	&__text {}
 
-		&__body {
-			flex-direction: column;
-		}
+	&__wallpaper {
+		align-self: end;
 	}
 }
 

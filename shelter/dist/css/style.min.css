@@ -124,6 +124,7 @@ h6 {
   --gray: #CDCDCD;
   --dark-gray: #B2B2B2;
   --pink: #F1CDB3;
+  --light-pink: #FDDCC4;
   --matte-black: #4C4C4C;
   --title-black: #545454;
   --bg-dark: linear-gradient(90deg, #5b473a, #201f20);
@@ -494,35 +495,32 @@ svg {
   width: 100%;
   justify-content: space-between;
   align-items: center;
+  column-gap: 150px;
 }
-.footer__body a {
+.footer__column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 234px;
+}
+.footer__title {
+  color: var(--white);
+}
+.footer__item {
+  font-family: Georgia;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  text-align: left;
+  color: var(--pink);
   display: flex;
   align-items: center;
 }
-.footer__body a:hover {
-  color: var(--gold);
+.footer__logo {
+  padding-right: 20px;
 }
-.footer__body a:hover svg {
-  fill: var(--gold);
-}
-.footer__body svg {
-  width: 28px;
-  margin-right: 8px;
-  transition: fill 0.5s ease 0s;
-  fill: var(--white);
-}
-.footer__year {
-  display: flex;
-  width: auto;
-}
-@media (max-width: 1024px) {
-  .footer__year {
-    padding-top: 20px;
-  }
-  .footer__company {
-    padding-bottom: 20px;
-  }
-  .footer__body {
-    flex-direction: column;
-  }
+.footer__wallpaper {
+  align-self: end;
 }
