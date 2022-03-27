@@ -17,6 +17,7 @@ html {
 
 .header,
 .not-only,
+.about,
 .footer {
 	font-family: Arial;
 	font-size: 15px;
@@ -188,6 +189,41 @@ svg {
 }
 
 //not-only
+
+//about
+.about {
+
+	&__container {
+		max-width: 930px;
+	}
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		margin: 80px 0 100px;
+	}
+
+	&__wallpaper {
+		flex: 0 0 300px;
+	}
+
+	&__column {
+		flex: 0 0 430px;
+		display: flex;
+		align-items: center;
+	}
+
+	&__text {}
+
+	&__title {}
+
+	&__subtitle {
+		margin-top: 25px;
+		line-height: 24px;
+	}
+}
+
+//about
 
 //footer
 
