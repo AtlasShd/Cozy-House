@@ -19,6 +19,7 @@ html {
 .not-only,
 .about,
 .our-friends,
+.help,
 .footer {
 	font-family: Arial;
 	font-size: 15px;
@@ -331,6 +332,54 @@ svg {
 }
 
 //our-friends
+
+//help
+.help {
+
+	&__container {}
+
+	&__body {
+		padding: 80px 0 100px;
+	}
+
+	&__header {}
+
+	&__title {
+		text-align: center;
+	}
+
+	&__list {
+		margin-top: 60px;
+		display: flex;
+		column-gap: 120px;
+		row-gap: 55px;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	&__item {}
+
+	&__icon {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 30px;
+
+		& img {
+			width: 60px;
+			height: 60px;
+		}
+	}
+
+	&__name {
+		font-family: Georgia;
+		font-size: 20px;
+		line-height: 23px;
+		letter-spacing: 0.06em;
+		text-align: center;
+	}
+}
+
+//help
 
 //footer
 
