@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 @@include('html/head.html', {
-"title": "shelter"
+'title': 'shelter'
 })
 
 <body id="transition-none">
-	@@include('html/header.html', {})
+	@@include('html/header.html', {
+	'class-header': 'class="header"',
+	'class-about': 'class="header__link header__active"',
+	'class-our': 'class="header__link"'
+	})
 
 	<main class="main">
 
@@ -73,31 +77,31 @@
 							<div class="arrow">←</div>
 						</div>
 						<div class="carousel__body">
-							<div class="carousel__card">
-								<div class="carousel__img">
+							<div class="carousel__card card">
+								<div class="card__img">
 									<img src="assets/images/our-friends1.png" alt="Katrine">
 								</div>
-								<div class="carousel__name">Katrine</div>
-								<div class="carousel__btns">
-									<button class="carousel__btn button">Learn more</button>
+								<div class="card__name">Katrine</div>
+								<div class="card__btns">
+									<button class="card__btn button">Learn more</button>
 								</div>
 							</div>
-							<div class="carousel__card">
-								<div class="carousel__img">
+							<div class="carousel__card card">
+								<div class="card__img">
 									<img src="assets/images/our-friends2.png" alt="Jennifer">
 								</div>
-								<div class="carousel__name">Jennifer</div>
-								<div class="carousel__btns">
-									<button class="carousel__btn button">Learn more</button>
+								<div class="card__name">Jennifer</div>
+								<div class="card__btns">
+									<button class="card__btn button">Learn more</button>
 								</div>
 							</div>
-							<div class="carousel__card">
-								<div class="carousel__img">
+							<div class="carousel__card card">
+								<div class="card__img">
 									<img src="assets/images/our-friends3.png" alt="Woody">
 								</div>
-								<div class="carousel__name">Woody</div>
-								<div class="carousel__btns">
-									<button class="carousel__btn button">Learn more</button>
+								<div class="card__name">Woody</div>
+								<div class="card__btns">
+									<button class="card__btn button">Learn more</button>
 								</div>
 							</div>
 						</div>
