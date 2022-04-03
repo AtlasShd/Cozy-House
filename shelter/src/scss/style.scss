@@ -55,7 +55,7 @@ html {
 	padding: 0 40px;
 
 	@media (max-width: 1024px) {
-		padding: 0;
+		padding: 0 30px;
 	}
 }
 
@@ -68,13 +68,6 @@ html {
 	letter-spacing: 0.06em;
 	text-align: left;
 	color: var(--title-black);
-
-	@media (max-width: 1024px) {
-		font-size: 32px;
-		line-height: 40px;
-		max-width: 350px;
-		margin: 0 auto 30px;
-	}
 }
 
 button,
@@ -187,6 +180,14 @@ svg {
 			background: var(--pink);
 		}
 	}
+
+	@media (max-width: 1279px) {
+		position: absolute;
+		top: 30px;
+		left: 0;
+		width: 100%;
+		height: 60px;
+	}
 }
 
 
@@ -220,12 +221,14 @@ svg {
 	&__body {
 		padding-top: 180px;
 		display: flex;
+		row-gap: 100px;
 	}
 
 	&__column {
-		margin-top: 163px;
+		margin-top: 13.6%;
 		height: 322px;
 		margin-right: 42px;
+		max-width: 460px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -249,7 +252,55 @@ svg {
 		background: var(--pink);
 	}
 
-	&__wallpaper {}
+	&__wallpaper {
+		display: flex;
+		justify-content: end;
+		align-items: end;
+
+		& img {
+			aspect-ratio: 698 / 728;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	@media(max-width: 1279px) {
+
+		&__column {
+			max-width: 400px;
+		}
+
+		&__column {
+			margin: 0;
+		}
+	}
+
+	@media (max-width: 768px) {
+		&__body {
+			padding-top: 150px;
+			flex-wrap: wrap;
+			justify-content: end;
+		}
+
+		&__column {
+			margin: 0 auto;
+			max-width: 460px;
+		}
+
+		&__btn {
+			align-self: center;
+		}
+
+		&__wallpaper {
+			display: flex;
+			justify-content: end;
+
+			& img {
+				width: 81.5%;
+			}
+		}
+	}
 }
 
 //not-only
@@ -264,17 +315,22 @@ svg {
 	&__body {
 		display: flex;
 		justify-content: space-between;
+		flex-wrap: wrap-reverse;
 		padding: 80px 0 100px;
+		column-gap: 120px;
+		row-gap: 80px;
 	}
 
 	&__wallpaper {
 		flex: 0 0 300px;
+		margin: 0 auto;
 	}
 
 	&__column {
 		flex: 0 0 430px;
 		display: flex;
 		align-items: center;
+		margin: 0 auto;
 	}
 
 	&__text {}
@@ -297,7 +353,7 @@ svg {
 	&__body {
 		display: flex;
 		flex-direction: column;
-		padding: 80px 0 100px;
+		padding: 80px 0 76px;
 	}
 
 	&__header {
@@ -313,9 +369,7 @@ svg {
 		height: 435px;
 	}
 
-	&__pages {
-		margin: 60px 0;
-	}
+	&__pages {}
 
 	&__footer {
 		display: flex;
@@ -398,6 +452,30 @@ svg {
 			background: var(--light-pink);
 		}
 	}
+
+	@media(max-width: 1279px) {
+		&__arrow {
+			flex: 0 0 64px;
+		}
+	}
+
+	@media (max-width: 1024px) {
+		&__card {
+			&:last-of-type {
+				display: none;
+			}
+		}
+
+		&__body {
+			justify-content: space-evenly;
+		}
+	}
+
+	@media (max-width: 768px) {
+		&__body {
+			justify-content: space-between;
+		}
+	}
 }
 
 .pages {
@@ -405,6 +483,21 @@ svg {
 	justify-content: space-between;
 	flex-wrap: wrap;
 	row-gap: 30px;
+	column-gap: 40px;
+	margin: 60px 0;
+
+	@media (max-width: 1279px) {
+		justify-content: center;
+		margin: 30px 0 40px;
+
+		&__card {
+
+			&:nth-of-type(7n),
+			&:nth-of-type(8n) {
+				display: none;
+			}
+		}
+	}
 }
 
 .card {
@@ -454,7 +547,7 @@ svg {
 	&__container {}
 
 	&__body {
-		padding: 80px 0 100px;
+		padding: 104px 0px 100px;
 	}
 
 	&__header {}
@@ -492,6 +585,18 @@ svg {
 		letter-spacing: 0.06em;
 		text-align: center;
 	}
+
+	@media (max-width: 1024px) {
+
+		&__list {
+			column-gap: 60px;
+		}
+
+		&__item {
+			width: 170px;
+			height: 113px;
+		}
+	}
 }
 
 //help
@@ -506,18 +611,29 @@ svg {
 	&__body {
 		display: flex;
 		padding: 80px 0 100px;
+		flex-wrap: wrap-reverse;
+		column-gap: 30px;
+		row-gap: 60px;
 	}
 
 	&__wallpaper {
 		display: flex;
 		align-items: center;
+		margin: 0 auto;
+
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
 	}
 
 	&__column {
-		padding-left: 30px;
 		display: flex;
 		flex-direction: column;
 		row-gap: 20px;
+		max-width: 380px;
+		margin: 0 auto;
 	}
 
 	&__title {
@@ -594,6 +710,8 @@ svg {
 		justify-content: space-between;
 		align-items: center;
 		column-gap: 150px;
+		row-gap: 65px;
+		flex-wrap: wrap;
 	}
 
 	&__column {
@@ -603,10 +721,12 @@ svg {
 		height: 234px;
 	}
 
-	&__questions {}
+	&__questions {
+		max-width: 280px;
+	}
 
 	&__waiting {
-		transform: translateX(-9px);
+		max-width: 302px;
 	}
 
 	&__title {
@@ -644,6 +764,17 @@ svg {
 
 	&__wallpaper {
 		align-self: end;
+	}
+
+
+
+	@media (max-width: 1279px) {
+		&__body {
+			padding-top: 30px;
+			column-gap: 60px;
+			justify-content: center;
+			height: auto;
+		}
 	}
 }
 
