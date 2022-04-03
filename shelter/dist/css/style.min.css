@@ -382,26 +382,25 @@ svg {
   height: 52px;
   background: var(--pink);
 }
-.our-friends__number-btn {
+.our-friends__small-btn {
+  font-family: Georgia;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  text-align: center;
   width: 52px;
   height: 52px;
-  background: var(--pink);
   border: 2px solid var(--pink);
+  background: none;
+}
+.our-friends__number-btn {
+  background: var(--pink);
 }
 .our-friends__left-btn {
-  width: 52px;
-  height: 52px;
-  background: none;
   border: 2px solid var(--gray);
   color: var(--gray);
 }
-.our-friends__right-btn {
-  width: 52px;
-  height: 52px;
-  background: none;
-  border: 2px solid var(--pink);
-}
-
 .carousel {
   display: flex;
 }

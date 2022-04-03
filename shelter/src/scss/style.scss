@@ -329,27 +329,29 @@ svg {
 		background: var(--pink);
 	}
 
-	&__number-btn {
+	&__small-btn {
+		font-family: Georgia;
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 23px;
+		letter-spacing: 0.06em;
+		text-align: center;
 		width: 52px;
 		height: 52px;
-		background: var(--pink);
 		border: 2px solid var(--pink);
+		background: none;
+	}
+
+	&__number-btn {
+		background: var(--pink);
 	}
 
 	&__left-btn {
-		width: 52px;
-		height: 52px;
-		background: none;
 		border: 2px solid var(--gray);
 		color: var(--gray);
 	}
 
-	&__right-btn {
-		width: 52px;
-		height: 52px;
-		background: none;
-		border: 2px solid var(--pink);
-	}
+	&__right-btn {}
 }
 
 .carousel {
