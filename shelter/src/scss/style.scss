@@ -29,7 +29,7 @@ html {
 	font-size: 15px;
 	font-style: normal;
 	font-weight: 400;
-	line-height: 1.5;
+	line-height: 24px;
 	letter-spacing: 0em;
 }
 
@@ -57,6 +57,10 @@ html {
 	@media (max-width: 1024px) {
 		padding: 0 30px;
 	}
+
+	@media (max-width: 767px) {
+		padding: 0 10px;
+	}
 }
 
 .title {
@@ -68,6 +72,12 @@ html {
 	letter-spacing: 0.06em;
 	text-align: left;
 	color: var(--title-black);
+
+	@media(max-width: 767px) {
+		font-size: 25px;
+		line-height: 32px;
+		text-align: center;
+	}
 }
 
 button,
@@ -188,6 +198,12 @@ svg {
 		width: 100%;
 		height: 60px;
 	}
+
+	@media (max-width: 767px) {
+		&__nav {
+			display: none;
+		}
+	}
 }
 
 
@@ -301,6 +317,30 @@ svg {
 			}
 		}
 	}
+
+	@media (max-width: 767px) {
+
+		&__column {
+			height: 296px;
+		}
+
+		&__title {
+			font-size: 25px;
+			line-height: 32px;
+			letter-spacing: 0.06em;
+		}
+
+		&__subtitle {
+			text-align: center;
+		}
+
+		&__wallpaper {
+
+			& img {
+				width: 88.5%;
+			}
+		}
+	}
 }
 
 //not-only
@@ -324,10 +364,16 @@ svg {
 	&__wallpaper {
 		flex: 0 0 300px;
 		margin: 0 auto;
+
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
 	}
 
 	&__column {
-		flex: 0 0 430px;
+		flex: 0 1 430px;
 		display: flex;
 		align-items: center;
 		margin: 0 auto;
@@ -339,7 +385,26 @@ svg {
 
 	&__subtitle {
 		margin-top: 25px;
-		line-height: 24px;
+	}
+
+	@media (max-width: 767px) {
+		&__body {
+			padding: 42px 0;
+			row-gap: 42px;
+		}
+
+		&__wallpaper {
+			padding: 0 20px;
+		}
+
+		&__subtitle {
+			padding: 0 15px;
+			text-align: justify;
+		}
+
+		&__subtitle:last-of-type {
+			margin-top: 21px;
+		}
 	}
 }
 
@@ -406,12 +471,29 @@ svg {
 	}
 
 	&__right-btn {}
+
+	@media(max-width: 767px) {
+
+		&__body {
+			padding: 42px 0;
+		}
+
+		&__carousel {
+			margin: 42px 0 114px;
+		}
+
+		&__footer {
+			column-gap: 10px;
+		}
+	}
 }
 
 .carousel {
 	display: flex;
+	row-gap: 20px;
 
 	&__body {
+		order: 2;
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
@@ -427,10 +509,12 @@ svg {
 		align-items: center;
 
 		&_left {
+			order: 1;
 			justify-content: start;
 		}
 
 		&_right {
+			order: 3;
 			justify-content: end;
 		}
 	}
@@ -460,10 +544,8 @@ svg {
 	}
 
 	@media (max-width: 1024px) {
-		&__card {
-			&:last-of-type {
-				display: none;
-			}
+		&__card:last-of-type {
+			display: none;
 		}
 
 		&__body {
@@ -474,6 +556,32 @@ svg {
 	@media (max-width: 768px) {
 		&__body {
 			justify-content: space-between;
+		}
+	}
+
+	@media (max-width: 767px) {
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+
+		&__body {
+			order: 1;
+			justify-content: center;
+		}
+
+		&__card:nth-of-type(2n) {
+			display: none;
+		}
+
+		&__arrow {
+			height: auto;
+
+			&_left {
+				order: 2;
+			}
+
+			&_right {
+				order: 3;
+			}
 		}
 	}
 }
@@ -494,6 +602,20 @@ svg {
 
 			&:nth-of-type(7n),
 			&:nth-of-type(8n) {
+				display: none;
+			}
+		}
+	}
+
+	@media (max-width: 767px) {
+		justify-content: center;
+		margin: 42px 0;
+
+		&__card {
+
+			&:nth-of-type(4n),
+			&:nth-of-type(5n),
+			&:nth-of-type(6n) {
 				display: none;
 			}
 		}
@@ -573,8 +695,8 @@ svg {
 		margin-bottom: 30px;
 
 		& img {
-			width: 60px;
-			height: 60px;
+			max-width: 60px;
+			max-height: 60px;
 		}
 	}
 
@@ -596,6 +718,46 @@ svg {
 			width: 170px;
 			height: 113px;
 		}
+	}
+
+	@media (max-width: 767px) {
+
+		&__body {
+			padding: 42px 0px;
+		}
+
+		&__list {
+			margin-top: 42px;
+			gap: 30px;
+			padding: 0 5px;
+		}
+
+		&__item {
+			width: 130px;
+			height: 87px;
+		}
+
+
+		&__icon {
+			margin-bottom: 20px;
+
+			& img {
+				max-height: 50px;
+				max-width: 50px;
+			}
+		}
+
+		&__name {
+			font-size: 15px;
+			line-height: 17px;
+		}
+	}
+
+	@media(max-width: 420px) {
+		&__list {
+			justify-content: start;
+		}
+
 	}
 }
 
@@ -660,11 +822,10 @@ svg {
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
-		width: 349px;
+		max-width: 349px;
 		height: 43px;
 		background: var(--pink);
 		border-radius: 9px;
-
 	}
 
 	&__icon {
@@ -692,6 +853,49 @@ svg {
 		letter-spacing: 0px;
 		text-align: left;
 		color: var(--dark-gray);
+	}
+
+	@media (max-width: 767px) {
+
+		&__wallpaper {
+			padding: 0 10px;
+		}
+
+		&__title {
+			font-size: 25px;
+			line-height: 32px;
+			text-align: center;
+		}
+
+		&__body {
+			padding: 42px 9px;
+			row-gap: 42px;
+		}
+
+		&__card {
+			width: 281px;
+			align-self: center;
+		}
+
+		&__number {
+			font-family: Georgia;
+			font-size: 15px;
+			font-weight: 400;
+			line-height: 17px;
+			letter-spacing: 0.06em;
+			text-align: left;
+			color: var(--title-black);
+		}
+
+		&__bank {
+			letter-spacing: 0;
+			text-align: center;
+			line-height: 24px;
+		}
+
+		&__post-scriptum {
+			text-align: justify;
+		}
 	}
 }
 
@@ -766,14 +970,47 @@ svg {
 		align-self: end;
 	}
 
-
-
 	@media (max-width: 1279px) {
 		&__body {
 			padding-top: 30px;
 			column-gap: 60px;
 			justify-content: center;
 			height: auto;
+		}
+	}
+
+	@media (max-width: 767px) {
+
+		&__title {
+			padding: 0 15px;
+		}
+
+		&__body {
+			row-gap: 40px;
+		}
+
+		&__questions {
+			max-width: 280px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			height: 208px;
+		}
+
+		&__waiting {
+			height: 222px;
+		}
+
+		&__wallpaper {
+			align-self: end;
+			display: flex;
+			justify-content: center;
+
+			& img {
+				width: 86.5%;
+				height: 100%;
+				object-fit: contain;
+			}
 		}
 	}
 }
