@@ -8,6 +8,7 @@
 	--dark-gray: #B2B2B2;
 	--pink: #F1CDB3;
 	--bg-gray: #F6F6F6;
+	--light-green: #FAFAFA;
 	--light-pink: #FDDCC4;
 	--matte-black: #4C4C4C;
 	--title-black: #545454;
@@ -23,6 +24,7 @@ html {
 .not-only,
 .about,
 .our-friends,
+.popup,
 .help,
 .in-addition,
 .footer {
@@ -244,24 +246,45 @@ svg {
 
 .burger {
 	display: none;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	right: 0;
-	max-width: 320px;
-	width: 100%;
-	height: 823px;
+	width: 100vw;
+	height: 100vh;
 	overflow: hidden;
 	pointer-events: none;
+
+	&__shadow {
+		width: 100%;
+		height: 100%;
+		background: var(--dark-black);
+		opacity: 0;
+		transition: opacity 0.5s ease 0s;
+		pointer-events: none;
+		cursor: pointer;
+	}
+
+	&__main {
+		position: absolute;
+		top: 0;
+		right: 0;
+		max-width: 320px;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+	}
 
 	&__container {
 		position: absolute;
 		top: 0;
 		right: -100%;
+		max-width: 320px;
 		width: 100%;
 		height: 100%;
 		background: var(--dark-black);
 		transition: right 0.5s ease 0s;
-		pointer-events: auto;
+		pointer-events: all;
+		overflow-y: auto;
 	}
 
 	&__header {
@@ -276,6 +299,7 @@ svg {
 		height: 60px;
 		align-self: center;
 		color: var(--pink);
+		pointer-events: all;
 
 		& h1 {
 			font-family: Georgia;
@@ -326,7 +350,7 @@ svg {
 	}
 
 	&__body {
-		padding-top: 130px;
+		height: calc(100% - 120px);
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -823,9 +847,13 @@ svg {
 	overflow: hidden;
 	transition: box-shadow 0.5s ease 0s;
 	padding-bottom: 30px;
+	cursor: pointer;
+	background: var(--light-green);
 
-	&:hover {
+	&:hover,
+	&:active {
 		cursor: pointer;
+		background: var(--white);
 
 		& .card__btns button {
 			background: var(--pink);
@@ -856,6 +884,186 @@ svg {
 }
 
 //our-friends
+
+//popup
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__shadow {
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: var(--dark-black);
+		opacity: 0.6;
+		cursor: pointer;
+	}
+
+	&__container {
+		position: relative;
+		z-index: 3;
+		width: 900px;
+		height: 500px;
+		display: flex;
+		background: var(--white);
+		border-radius: 9px;
+	}
+
+	&__cross {
+		position: absolute;
+		right: -42px;
+		top: -52px;
+		width: 52px;
+		height: 52px;
+		border: 2px solid var(--pink);
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 28px;
+		cursor: pointer;
+		transform: scale(1);
+
+		& span {
+			transition: transform 0.33s ease 0s;
+		}
+
+		&:hover span {
+			transform: scale(1.2);
+		}
+
+	}
+
+	&__img {
+		flex: 0 0 calc((5 / 9) * 100%);
+		border-radius: 9px 0 0 9px;
+		overflow: hiddeny;
+
+		& img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__column {
+		flex: 0 0 calc((4 / 9) * 100%);
+		padding: 50px 20px 88px 29px;
+		font-family: Georgia;
+		letter-spacing: 0.06em;
+		display: flex;
+		flex-direction: column;
+		row-gap: 40px;
+	}
+
+	&__name {
+		font-size: 35px;
+		line-height: 45px;
+		margin-bottom: 10px;
+	}
+
+	&__type-breed {
+		font-size: 20px;
+		line-height: 23px;
+	}
+
+	&__description {
+		line-height: 17px;
+	}
+
+	&__character {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding-left: 15px;
+		font-size: 15px;
+		line-height: 17px;
+		height: 102px;
+	}
+
+	@media (max-width: 1024px) {
+
+		&__container {
+			width: 630px;
+			height: 350px;
+		}
+
+		&__column {
+			padding: 10px 9px 37px 11px;
+			row-gap: 20px;
+		}
+
+
+		&__cross {
+			right: -30px;
+		}
+
+		&__name {
+			font-size: 35px;
+			line-height: 45px;
+			margin-bottom: 10px;
+		}
+
+		&__type-breed {
+			font-size: 20px;
+			line-height: 23px;
+		}
+
+		&__description {
+			font-size: 13px;
+			line-height: 14px;
+			letter-spacing: 0.054em;
+		}
+
+		&__character {
+			height: 87px;
+		}
+	}
+
+	@media (max-width: 767px) {
+		&__container {
+			width: 100%;
+			height: auto;
+			margin: 0 40px;
+		}
+
+		&__column {
+			padding: 10px;
+			flex: 0 0 100%;
+		}
+
+		&__name {
+			text-align: center;
+		}
+
+		&__type-breed {
+			text-align: center;
+		}
+
+		&__description {
+			text-align: justify;
+			padding-bottom: 2px;
+		}
+
+		&__character {
+			margin-bottom: 10px;
+		}
+
+		&__img {
+			display: none;
+		}
+	}
+}
+
+//popup
 
 //help
 .help {
@@ -1227,4 +1435,17 @@ svg {
 .notactive {
 	pointer-events: none;
 	color: var(--gray);
+}
+
+.half-opacity {
+	opacity: 0.6;
+}
+
+.pointer-events {
+	pointer-events: all;
+}
+
+
+.bold {
+	font-weight: bold;
 }

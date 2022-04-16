@@ -124,6 +124,7 @@ h6 {
   --dark-gray: #B2B2B2;
   --pink: #F1CDB3;
   --bg-gray: #F6F6F6;
+  --light-green: #FAFAFA;
   --light-pink: #FDDCC4;
   --matte-black: #4C4C4C;
   --title-black: #545454;
@@ -139,6 +140,7 @@ html {
 .not-only,
 .about,
 .our-friends,
+.popup,
 .help,
 .in-addition,
 .footer {
@@ -341,24 +343,43 @@ svg {
 
 .burger {
   display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+}
+.burger__shadow {
+  width: 100%;
+  height: 100%;
+  background: var(--dark-black);
+  opacity: 0;
+  transition: opacity 0.5s ease 0s;
+  pointer-events: none;
+  cursor: pointer;
+}
+.burger__main {
   position: absolute;
   top: 0;
   right: 0;
   max-width: 320px;
   width: 100%;
-  height: 823px;
-  overflow: hidden;
+  height: 100%;
   pointer-events: none;
 }
 .burger__container {
   position: absolute;
   top: 0;
   right: -100%;
+  max-width: 320px;
   width: 100%;
   height: 100%;
   background: var(--dark-black);
   transition: right 0.5s ease 0s;
-  pointer-events: auto;
+  pointer-events: all;
+  overflow-y: auto;
 }
 .burger__header {
   display: flex;
@@ -371,6 +392,7 @@ svg {
   height: 60px;
   align-self: center;
   color: var(--pink);
+  pointer-events: all;
 }
 .burger__logo h1 {
   font-family: Georgia;
@@ -415,7 +437,7 @@ svg {
   background: var(--pink);
 }
 .burger__body {
-  padding-top: 130px;
+  height: calc(100% - 120px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -802,11 +824,14 @@ svg {
   overflow: hidden;
   transition: box-shadow 0.5s ease 0s;
   padding-bottom: 30px;
-}
-.card:hover {
   cursor: pointer;
+  background: var(--light-green);
 }
-.card:hover .card__btns button {
+.card:hover, .card:active {
+  cursor: pointer;
+  background: var(--white);
+}
+.card:hover .card__btns button, .card:active .card__btns button {
   background: var(--pink);
 }
 .card__name {
@@ -825,6 +850,154 @@ svg {
   border: 1px solid var(--pink);
   background: var(--white);
   margin: 0 auto;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup__shadow {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--dark-black);
+  opacity: 0.6;
+  cursor: pointer;
+}
+.popup__container {
+  position: relative;
+  z-index: 3;
+  width: 900px;
+  height: 500px;
+  display: flex;
+  background: var(--white);
+  border-radius: 9px;
+}
+.popup__cross {
+  position: absolute;
+  right: -42px;
+  top: -52px;
+  width: 52px;
+  height: 52px;
+  border: 2px solid var(--pink);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  cursor: pointer;
+  transform: scale(1);
+}
+.popup__cross span {
+  transition: transform 0.33s ease 0s;
+}
+.popup__cross:hover span {
+  transform: scale(1.2);
+}
+.popup__img {
+  flex: 0 0 55.5555555556%;
+  border-radius: 9px 0 0 9px;
+  overflow: hiddeny;
+}
+.popup__img img {
+  width: 100%;
+  height: 100%;
+}
+.popup__column {
+  flex: 0 0 44.4444444444%;
+  padding: 50px 20px 88px 29px;
+  font-family: Georgia;
+  letter-spacing: 0.06em;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+.popup__name {
+  font-size: 35px;
+  line-height: 45px;
+  margin-bottom: 10px;
+}
+.popup__type-breed {
+  font-size: 20px;
+  line-height: 23px;
+}
+.popup__description {
+  line-height: 17px;
+}
+.popup__character {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 15px;
+  font-size: 15px;
+  line-height: 17px;
+  height: 102px;
+}
+@media (max-width: 1024px) {
+  .popup__container {
+    width: 630px;
+    height: 350px;
+  }
+  .popup__column {
+    padding: 10px 9px 37px 11px;
+    row-gap: 20px;
+  }
+  .popup__cross {
+    right: -30px;
+  }
+  .popup__name {
+    font-size: 35px;
+    line-height: 45px;
+    margin-bottom: 10px;
+  }
+  .popup__type-breed {
+    font-size: 20px;
+    line-height: 23px;
+  }
+  .popup__description {
+    font-size: 13px;
+    line-height: 14px;
+    letter-spacing: 0.054em;
+  }
+  .popup__character {
+    height: 87px;
+  }
+}
+@media (max-width: 767px) {
+  .popup__container {
+    width: 100%;
+    height: auto;
+    margin: 0 40px;
+  }
+  .popup__column {
+    padding: 10px;
+    flex: 0 0 100%;
+  }
+  .popup__name {
+    text-align: center;
+  }
+  .popup__type-breed {
+    text-align: center;
+  }
+  .popup__description {
+    text-align: justify;
+    padding-bottom: 2px;
+  }
+  .popup__character {
+    margin-bottom: 10px;
+  }
+  .popup__img {
+    display: none;
+  }
 }
 
 .help__body {
@@ -1120,4 +1293,16 @@ svg {
 .notactive {
   pointer-events: none;
   color: var(--gray);
+}
+
+.half-opacity {
+  opacity: 0.6;
+}
+
+.pointer-events {
+  pointer-events: all;
+}
+
+.bold {
+  font-weight: bold;
 }
