@@ -117,10 +117,6 @@ svg {
 	}
 }
 
-.notbutton {
-	pointer-events: none;
-}
-
 //header
 .header {
 	position: absolute;
@@ -1223,3 +1219,12 @@ svg {
 }
 
 //footer
+
+.notbutton {
+	pointer-events: none;
+}
+
+.notactive {
+	pointer-events: none;
+	color: var(--gray);
+}

@@ -233,10 +233,6 @@ svg {
   background: var(--light-pink);
 }
 
-.notbutton {
-  pointer-events: none;
-}
-
 .header {
   position: absolute;
   top: 60px;
@@ -1115,4 +1111,13 @@ svg {
     height: 100%;
     object-fit: contain;
   }
+}
+
+.notbutton {
+  pointer-events: none;
+}
+
+.notactive {
+  pointer-events: none;
+  color: var(--gray);
 }

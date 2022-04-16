@@ -9,9 +9,9 @@ export default function burgerMenu() {
 	burgerBurger.addEventListener('click', toggleBurger);
 
 	function toggleBurger() {
+		burger.classList.toggle('show-burger');
+		
 		headerBurger.classList.toggle('rotate-burger');
 		burgerBurger.classList.toggle('rotate-burger');
-
-		burger.classList.toggle('show-burger');
 	}
 }
