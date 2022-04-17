@@ -28,27 +28,26 @@ export default function popup(popupJson) {
 
 		render() {
 			this.element = document.createElement('div');
+			this.element.classList.add('popup');
 
 			this.element.innerHTML = `
-				<div class="popup">
-					<div class="popup__shadow"></div>
-					<div class="popup__container">
-						<div class="popup__cross"><span>&#215;</span></div>
-						<div class="popup__img">
-							<img src="${this.img}" alt="${this.name}">
+				<div class="popup__shadow"></div>
+				<div class="popup__container">
+					<div class="popup__cross"><span>&#215;</span></div>
+					<div class="popup__img">
+						<img src="${this.img}" alt="${this.name}">
+					</div>
+					<div class="popup__column">
+						<div class="popup__title">
+							<h3 class="popup__name">${this.name}</h3>
+							<h4 class="popup__type-breed">${this.type} - ${this.breed}</h4>
 						</div>
-						<div class="popup__column">
-							<div class="popup__title">
-								<h3 class="popup__name">${this.name}</h3>
-								<h4 class="popup__type-breed">${this.type} - ${this.breed}</h4>
-							</div>
-							<h5 class="popup__description">${this.description}</h5>
-							<div class="popup__character">
-								<p class="popup__age"><span class="bold">Age:</span> ${this.age}</p>
-								<p class="popup__inoculations"><span class="bold">Inoculations:</span> ${this.inoculations}</p>
-								<p class="popup__diseases"><span class="bold">Diseases:</span> ${this.diseases}</p>
-								<p class="popup__parasites"><span class="bold">Parasites:</span> ${this.parasites}</p>
-							</div>
+						<h5 class="popup__description">${this.description}</h5>
+						<div class="popup__character">
+							<p class="popup__age"><span class="bold">Age:</span> ${this.age}</p>
+							<p class="popup__inoculations"><span class="bold">Inoculations:</span> ${this.inoculations}</p>
+							<p class="popup__diseases"><span class="bold">Diseases:</span> ${this.diseases}</p>
+							<p class="popup__parasites"><span class="bold">Parasites:</span> ${this.parasites}</p>
 						</div>
 					</div>
 				</div>

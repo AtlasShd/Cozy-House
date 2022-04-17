@@ -54,6 +54,7 @@
 		"webpack-stream": "latest"
 	},
 	"dependencies": {
-		"gulp-cli": "latest"
+		"gulp-cli": "latest",
+		"tiny-slider": "^2.9.4"
 	}
 }
