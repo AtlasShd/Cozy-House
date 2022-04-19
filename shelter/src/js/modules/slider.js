@@ -1,27 +1,37 @@
 'use strict';
 
 export default function slider(prevBtn, nextBtn, carousel) {
-
-	const DOGS_NAMES = [
-		'Katrine',
-		'Jennifer',
-		'Woody',
-		'Sophia',
-		'Timmy',
-		'Charly',
-		'Scarlett',
-		'Freddie'
-	];
-
-	const toPrev = true,
-		toNext = false;
+	const DOGS_NAMES = ['Katrine', 'Jennifer', 'Woody', 'Sophia', 'Timmy', 'Charly', 'Scarlett', 'Freddie'],
+		toPrev = true,
+		toNext = false,
+		fromPrev = true,
+		fromNext = false;
 
 	let isEnabled = true,
 		step = 3,
+		stepPx = 360,
 		currentCards = [];
 
 	prevBtn.addEventListener('click', prevSlide);
 	nextBtn.addEventListener('click', nextSlide);
+
+	window.addEventListener('resize', setStep);
+
+	function setStep() {
+		if (window.matchMedia('(max-width: 767px)').matches) {
+			stepPx = 270 + ((window.screen.width - 290) / 1.971);
+			step = 1;
+		} else if (window.matchMedia('(max-width: 1024px)').matches) {
+			stepPx = 270 + ((window.screen.width - 733) / 0.866);
+			step = 2;
+		} else if (window.matchMedia('(max-width: 1280px)').matches) {
+			stepPx = 270 + ((window.screen.width - 1018) / 2.91);
+			console.log(window.screen.width, stepPx);
+			step = 3;
+		}
+		console.log(step);
+	}
+	setStep();
 
 	function prevSlide() {
 		if (!isEnabled) {
@@ -36,9 +46,7 @@ export default function slider(prevBtn, nextBtn, carousel) {
 			carousel.style.left = byStep(+step);
 		}, 0);
 		setTimeout(() => {
-			carousel.removeChild(carousel.lastElementChild);
-			carousel.removeChild(carousel.lastElementChild);
-			carousel.removeChild(carousel.lastElementChild);
+			removeCards(fromNext);
 			isEnabled = true;
 			checkCurrentItems();
 		}, 500);
@@ -54,9 +62,7 @@ export default function slider(prevBtn, nextBtn, carousel) {
 		isEnabled = false;
 		setTimeout(() => {
 			carousel.classList.remove('left-transition');
-			carousel.removeChild(carousel.firstElementChild);
-			carousel.removeChild(carousel.firstElementChild);
-			carousel.removeChild(carousel.firstElementChild);
+			removeCards(fromPrev);
 			carousel.style.left = byStep(+step);
 			isEnabled = true;
 			checkCurrentItems();
@@ -64,8 +70,8 @@ export default function slider(prevBtn, nextBtn, carousel) {
 	}
 
 	function byStep(s) {
-		const left = 360 * s;
-		return (+carousel.style.left.substring(0, carousel.style.left.length - 2) + left) + 'px';
+		const left = stepPx * s;
+		return +carousel.style.left.substring(0, carousel.style.left.length - 2) + left + 'px';
 	}
 
 	function checkCurrentItems() {
@@ -73,16 +79,27 @@ export default function slider(prevBtn, nextBtn, carousel) {
 		for (let card of carousel.children) {
 			currentCards.splice(currentCards.indexOf(card.getAttribute('data-name')), 1);
 		}
+		console.log(currentCards);
 	}
 	checkCurrentItems();
 
 	function renderCards(where) {
 		for (let i = 0; i < step; i++) {
-			const randomNumber = Math.floor(Math.random() * (8 - step - i));
+			const randomNumber = Math.floor(Math.random() * (5 - i));
 
 			new Card(carousel, currentCards[randomNumber]).render(where);
 
 			currentCards.splice(currentCards.indexOf(currentCards[randomNumber]), 1);
+		}
+	}
+
+	function removeCards(where) {
+		for (let i = 0; i < step; i++) {
+			if (where) {
+				carousel.removeChild(carousel.firstElementChild);
+			} else {
+				carousel.removeChild(carousel.lastElementChild);
+			}
 		}
 	}
 

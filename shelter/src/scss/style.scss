@@ -720,7 +720,7 @@ svg {
 
 	&__carousel {
 		display: flex;
-		column-gap: 90px;
+		column-gap: calc((100vw - 1018px) / 2.91);
 		width: auto;
 		min-width: 100%;
 		position: absolute;
@@ -772,6 +772,13 @@ svg {
 		}
 	}
 
+	@media(max-width: 1024px) {
+
+		&__carousel {
+			column-gap: calc((100vw - 733px) / 0.866);
+		}
+	}
+
 	@media (max-width: 767px) {
 		flex-wrap: wrap;
 		justify-content: space-evenly;
@@ -781,7 +788,8 @@ svg {
 		}
 
 		&__carousel {
-			justify-content: center;
+			margin-left: calc((100vw - 290px) / 1.971);
+			column-gap: calc((100vw - 290px) / 1.971);
 		}
 
 		&__arrow {
@@ -1158,8 +1166,16 @@ svg {
 	}
 
 	@media(max-width: 420px) {
+
+		&__body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
 		&__list {
 			justify-content: start;
+			max-width: 300px;
 		}
 
 	}

@@ -721,7 +721,7 @@ svg {
 }
 .carousel__carousel {
   display: flex;
-  column-gap: 90px;
+  column-gap: calc((100vw - 1018px) / 2.91);
   width: auto;
   min-width: 100%;
   position: absolute;
@@ -764,6 +764,11 @@ svg {
     flex: 0 0 64px;
   }
 }
+@media (max-width: 1024px) {
+  .carousel__carousel {
+    column-gap: calc((100vw - 733px) / 0.866);
+  }
+}
 @media (max-width: 767px) {
   .carousel {
     flex-wrap: wrap;
@@ -773,7 +778,8 @@ svg {
     order: 1;
   }
   .carousel__carousel {
-    justify-content: center;
+    margin-left: calc((100vw - 290px) / 1.971);
+    column-gap: calc((100vw - 290px) / 1.971);
   }
   .carousel__arrow {
     height: auto;
@@ -1069,8 +1075,14 @@ svg {
   }
 }
 @media (max-width: 420px) {
+  .help__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .help__list {
     justify-content: start;
+    max-width: 300px;
   }
 }
 
