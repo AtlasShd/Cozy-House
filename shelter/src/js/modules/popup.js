@@ -1,7 +1,15 @@
 'use strict';
 
 export default function popup(popupJson) {
-	const cards = document.querySelectorAll('.card');
+
+	function addEvent() {
+		const cards = document.querySelectorAll('.card');
+
+		cards.forEach(card => {
+			card.addEventListener('click', showPopup);
+		});
+	}
+	addEvent();
 
 	class PopupCard {
 		constructor(name, img, type, breed, description, age, inoculations, diseases, parasites, parentSelector) {
@@ -57,10 +65,6 @@ export default function popup(popupJson) {
 		}
 	}
 
-	cards.forEach(card => {
-		card.addEventListener('click', showPopup);
-	});
-
 	function showPopup(e) {
 		const cardName = checkCard(e.target)
 
@@ -82,4 +86,6 @@ export default function popup(popupJson) {
 		const name = elem.getAttribute('data-name');
 		return name ? name : checkCard(elem.parentElement);
 	}
+
+	return addEvent;
 }

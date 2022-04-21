@@ -721,7 +721,7 @@ svg {
 }
 .carousel__carousel {
   display: flex;
-  column-gap: calc((100vw - 1018px) / 2.91);
+  column-gap: 90px;
   width: auto;
   min-width: 100%;
   position: absolute;
@@ -762,6 +762,9 @@ svg {
 @media (max-width: 1279px) {
   .carousel__arrow {
     flex: 0 0 64px;
+  }
+  .carousel__carousel {
+    column-gap: calc((100vw - 1018px) / 2.91);
   }
 }
 @media (max-width: 1024px) {

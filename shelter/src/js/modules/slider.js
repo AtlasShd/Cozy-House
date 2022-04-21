@@ -1,6 +1,6 @@
 'use strict';
 
-export default function slider(prevBtn, nextBtn, carousel) {
+export default function slider(prevBtn, nextBtn, carousel, addEvent) {
 	const DOGS_NAMES = ['Katrine', 'Jennifer', 'Woody', 'Sophia', 'Timmy', 'Charly', 'Scarlett', 'Freddie'],
 		toPrev = true,
 		toNext = false,
@@ -19,17 +19,19 @@ export default function slider(prevBtn, nextBtn, carousel) {
 
 	function setStep() {
 		if (window.matchMedia('(max-width: 767px)').matches) {
-			stepPx = 270 + ((window.screen.width - 290) / 1.971);
+			stepPx = 270 + ((window.innerWidth - 290) / 1.971);
 			step = 1;
 		} else if (window.matchMedia('(max-width: 1024px)').matches) {
-			stepPx = 270 + ((window.screen.width - 733) / 0.866);
+			stepPx = 270 + ((window.innerWidth - 733) / 0.866);
 			step = 2;
 		} else if (window.matchMedia('(max-width: 1280px)').matches) {
-			stepPx = 270 + ((window.screen.width - 1018) / 2.91);
-			console.log(window.screen.width, stepPx);
+			stepPx = 270 + ((window.innerWidth - 1018) / 2.91);
+			step = 3;
+		} else {
+			stepPx = 360;
 			step = 3;
 		}
-		console.log(step);
+		// console.log(step, stepPx, window.screen.width, window.innerWidth);
 	}
 	setStep();
 
@@ -50,6 +52,8 @@ export default function slider(prevBtn, nextBtn, carousel) {
 			isEnabled = true;
 			checkCurrentItems();
 		}, 500);
+
+		addEvent();
 	}
 
 	function nextSlide() {
@@ -67,6 +71,8 @@ export default function slider(prevBtn, nextBtn, carousel) {
 			isEnabled = true;
 			checkCurrentItems();
 		}, 500);
+
+		addEvent();
 	}
 
 	function byStep(s) {
@@ -79,7 +85,6 @@ export default function slider(prevBtn, nextBtn, carousel) {
 		for (let card of carousel.children) {
 			currentCards.splice(currentCards.indexOf(card.getAttribute('data-name')), 1);
 		}
-		console.log(currentCards);
 	}
 	checkCurrentItems();
 
