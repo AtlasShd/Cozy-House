@@ -8,7 +8,7 @@ import slider from './modules/slider.js';
 import pagination from './modules/pagination.js';
 
 window.addEventListener('DOMContentLoaded', () => {
-	document.querySelector('#transition-none').removeAttribute('id');
+	document.querySelector('.transition-none').removeAttribute('class');
 });
 
 const addPopupOnSliders = popup(popupJson);
