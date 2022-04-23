@@ -241,6 +241,7 @@ svg {
   left: 0;
   width: 100%;
   height: 60px;
+  z-index: 2;
 }
 .header__container {
   display: flex;
@@ -350,6 +351,7 @@ svg {
   height: 100vh;
   overflow: hidden;
   pointer-events: none;
+  z-index: 3;
 }
 .burger__shadow {
   width: 100%;
@@ -672,6 +674,10 @@ svg {
   height: 52px;
   background: var(--pink);
 }
+.our-friends .notbutton {
+  border: 2px solid var(--gray);
+  color: var(--gray);
+}
 .our-friends__small-btn {
   font-family: Georgia;
   font-size: 20px;
@@ -686,10 +692,6 @@ svg {
 }
 .our-friends__number-btn {
   background: var(--pink);
-}
-.our-friends__left-btn {
-  border: 2px solid var(--gray);
-  color: var(--gray);
 }
 @media (max-width: 1279px) {
   .our-friends__body {
@@ -796,6 +798,10 @@ svg {
 }
 
 .pages {
+  position: relative;
+  z-index: 1;
+}
+.pages__body, .pages__second-body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -803,8 +809,16 @@ svg {
   column-gap: 40px;
   margin: 60px 0;
 }
+.pages__second-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
 @media (max-width: 1279px) {
-  .pages {
+  .pages__body, .pages__second-body {
     justify-content: center;
     margin: 30px 0 40px;
   }
@@ -813,7 +827,7 @@ svg {
   }
 }
 @media (max-width: 767px) {
-  .pages {
+  .pages__body, .pages__second-body {
     justify-content: center;
     margin: 42px 0;
   }
@@ -866,6 +880,7 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 4;
 }
 .popup__shadow {
   position: absolute;
@@ -1300,6 +1315,9 @@ svg {
 .notbutton {
   pointer-events: none;
 }
+.notbutton:active {
+  background: none;
+}
 
 .notactive {
   pointer-events: none;
@@ -1320,4 +1338,21 @@ svg {
 
 .bold {
   font-weight: bold;
+}
+
+.enterInvis {
+  animation: invis 0.5s ease 0s;
+}
+
+.exitInvis {
+  animation: invis 0.5s ease 0s reverse;
+}
+
+@keyframes invis {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }

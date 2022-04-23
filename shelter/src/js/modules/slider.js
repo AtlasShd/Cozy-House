@@ -1,6 +1,10 @@
 'use strict';
 
 export default function slider(prevBtn, nextBtn, carousel, addEvent) {
+	if (!carousel) {
+		return;
+	}
+
 	const DOGS_NAMES = ['Katrine', 'Jennifer', 'Woody', 'Sophia', 'Timmy', 'Charly', 'Scarlett', 'Freddie'],
 		toPrev = true,
 		toNext = false,
@@ -31,7 +35,6 @@ export default function slider(prevBtn, nextBtn, carousel, addEvent) {
 			stepPx = 360;
 			step = 3;
 		}
-		// console.log(step, stepPx, window.screen.width, window.innerWidth);
 	}
 	setStep();
 
@@ -121,7 +124,7 @@ export default function slider(prevBtn, nextBtn, carousel, addEvent) {
 
 			this.element.innerHTML = `
 				<div class="card__img">
-					<img src="assets/images/${this.name}.png" alt="${this.name}">
+					<img src="assets/images/${this.name}.png" alt="${this.name}" width="270" height="270">
 				</div>
 				<div class="card__name">${this.name}</div>
 				<div class="card__btns">
