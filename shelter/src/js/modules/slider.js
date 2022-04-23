@@ -124,7 +124,7 @@ export default function slider(prevBtn, nextBtn, carousel, addEvent) {
 
 			this.element.innerHTML = `
 				<div class="card__img">
-					<img src="assets/images/${this.name}.png" alt="${this.name}" width="270" height="270">
+					<picture><source srcset="assets/images/${this.name}.webp" type="image/webp"><img src="assets/images/${this.name}.png" alt="${this.name}" width="270" height="270"></picture>
 				</div>
 				<div class="card__name">${this.name}</div>
 				<div class="card__btns">

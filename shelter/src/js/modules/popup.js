@@ -43,7 +43,7 @@ export default function popup(popupJson) {
 				<div class="popup__container">
 					<div class="popup__cross"><span>&#215;</span></div>
 					<div class="popup__img">
-						<img src="${this.img}" alt="${this.name}">
+						<picture><source srcset="${this.img}.webp" type="image/webp"><img src="${this.img}.png" alt="${this.name}"></picture>
 					</div>
 					<div class="popup__column">
 						<div class="popup__title">
