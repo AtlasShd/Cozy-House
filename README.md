@@ -1,4 +1,4 @@
-[Cozy-House](https://atlasshd.github.io/Cozy-House/shelter/dist/index.html#body)
+# [Cozy-House](https://atlasshd.github.io/Cozy-House/shelter/dist/index.html#body)
 
 [Макет Cozy-House](https://www.figma.com/file/tKcmzkARtMUFQAR9VLdLkl/shelter-dom)  
 
